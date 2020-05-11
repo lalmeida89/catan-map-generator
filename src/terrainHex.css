@@ -8,6 +8,21 @@
   width: 100px;
   margin: -10px 2px;
 }
+
+.numberToken-text {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  transform: translateY(50%);
+  background-color: white;
+  border-radius: 50%;
+}
+
+.show-numberTokens {
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 750px) {
   .terrain-hexagon{
     height: 50px;

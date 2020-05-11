@@ -7,6 +7,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      showNumberFlag : true,
       numberTokensArray : [
                             {number: 2, value: '•'},
                             {number: 3, value: '••'},
@@ -47,7 +48,7 @@ class App extends Component {
 
 
   render() {
-    const {numberTokensArray, terrainHexArray} = this.state;
+    const {numberTokensArray, terrainHexArray, showNumberFlag} = this.state;
 
     const formatNumbersForDisplay = arr => {
       for (let i = arr.length - 1; i > 0; i--) {
@@ -74,12 +75,24 @@ class App extends Component {
         terrainHexArray: arr2
       })
     }
-    
+
+    const toggleNumberTokens = () => {
+      this.setState(prevState =>({
+        showNumberFlag : !prevState.showNumberFlag
+      }))
+    }
+
     return (
       <div className="App">
-          <TerrainHexContainer numberArray={numberTokensArray} hexArray={terrainHexArray}/>
+          <TerrainHexContainer
+              numberArray={numberTokensArray}
+              hexArray={terrainHexArray}
+              showNumberFlag={showNumberFlag}/>
           <button
               onClick={()=>generateMap(numberTokensArray, terrainHexArray)}> click to randomize
+          </button>
+          <button
+              onClick={()=>toggleNumberTokens()}> click to hide numbers
           </button>
       </div>
     );

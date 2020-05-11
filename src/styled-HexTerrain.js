@@ -7,41 +7,43 @@ export const StyledHexTerrain = styled.div`
   text-align: center;
   top: 0;
   border: 1px solid black;
+  background-size: cover;
+  background-position: center;
 
   ${props =>
     props.terrainType === 'Forest' &&
     css`
-    background-color: #076507;
+    background-image: url('https://www.arborday.org/images/hero/medium/hero-aerial-forest-evergreen-trees.jpg');
   `};
 
   ${props =>
     props.terrainType === 'Hills' &&
     css`
-    background-color: #ad3535;
+    background-image: url('https://www.popsci.com/resizer/6uqVIP0GR7cGFiAPgTsu2UENLIo=/760x518/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/CLYZBOQDUNMFBUI33R3O3ETMHI.jpg');
   `};
 
   ${props =>
     props.terrainType === 'Mountain' &&
     css`
-    background-color: #7c7cc5;
+    background-image: url('https://s3.amazonaws.com/images.gearjunkie.com/uploads/2018/05/matterhorn-3x2.jpg');
   `};
 
   ${props =>
     props.terrainType === 'Pasture' &&
     css`
-    background-color: #7fd27f;
+    background-image: url('https://thumbs-prod.si-cdn.com/SkuS5xz-Q-kr_-ol6xblY9fsoeA=/fit-in/1600x0/https://public-media.si-cdn.com/filer/d4/f6/d4f6e4bf-8f77-445d-a8f9-e3a74c6a40f0/ewkhdqqwsae0xpo.jpeg');
   `};
 
   ${props =>
     props.terrainType === 'Fields' &&
     css`
-    background-color: #b6c348;
+    background-image: url('https://lqrgre8853kennl42a4f3on3-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/SWWW-market-class_slider-1024x480.jpg');
   `};
 
   ${props =>
     props.terrainType === 'Desert' &&
     css`
-    background-color: #dedea2;
+    background-image: url('https://www.thenational.ae/image/policy:1.746882:1530686834/000_JN3EE.jpg?f=16x9&w=1200&$p$f$w=1d806f7') ;
     color: transparent;
   `};
   `
