@@ -5,9 +5,6 @@ export const StyledHexTerrain = styled.div`
   position: relative;
   display: inline-block;
   text-align: center;
-  width: 100px;
-  height: 100px;
-  margin: -10px 2px;
   top: 0;
   border: 1px solid black;
 

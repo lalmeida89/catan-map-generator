@@ -5,7 +5,7 @@ import {StyledHexTerrain} from './styled-HexTerrain';
 
 export const TerrainHex = (numberToken, terrainToken) => {
   return (
-      <StyledHexTerrain terrainType={terrainToken}>
+      <StyledHexTerrain terrainType={terrainToken} className='terrain-hexagon'>
         <p className="numberToken numberToken-text">
             {numberToken.number}
         </p>
