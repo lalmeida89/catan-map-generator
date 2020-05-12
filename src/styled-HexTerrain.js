@@ -43,7 +43,7 @@ export const StyledHexTerrain = styled.div`
   ${props =>
     props.terrainType === 'Desert' &&
     css`
-    background-image: url('https://www.thenational.ae/image/policy:1.746882:1530686834/000_JN3EE.jpg?f=16x9&w=1200&$p$f$w=1d806f7') ;
+    background-color: #dedea2;
     color: transparent;
   `};
   `
