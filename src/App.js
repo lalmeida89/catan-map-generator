@@ -58,19 +58,62 @@ class App extends Component {
     //swap -- perhaps swapArrayElements();
     //flatten -- arr.flat();
     //display -- generateMap();
-    
+
     const unflattenArray = (arr, sizeArray) => {
       let tempArray = [...arr]
-      console.log(tempArray)
       let newArray = [];
       for(let i=0; i<sizeArray.length; i++){
         newArray.push(tempArray.splice(0, sizeArray[i]));
       }
-
-      console.log(newArray, newArray.flat())
+      comparePosOfHighValues(newArray)
+      console.log(newArray)
     }
 
-    unflattenArray(numberTokensArray, this.state.arrayOfSizes)
+    //unflattenArray(numberTokensArray, this.state.arrayOfSizes)
+
+
+    //helper function to just check keys of numberTokensArray
+
+    const showOnlyKeys = arr => {
+      let tempArray = arr.map(a=>{return a.number})
+      unflattenArray(tempArray, this.state.arrayOfSizes)
+
+    }
+
+    const findIndexOfHighValues = (arr, val1, val2) => {
+      let indexOfHighValue1 = arr.indexOf(val1);
+      let indexOfHighValue2 = arr.indexOf(val2);
+      if (indexOfHighValue1 >= 0 || indexOfHighValue2 >= 0){
+        return indexOfHighValue1 || indexOfHighValue2
+      }
+      /*if (indexOfHighValue2 >= 0){
+        return indexOfHighValue2
+      }*/
+      else {
+        return false
+      }
+    }
+
+    const comparePosOfHighValues = arr => {
+      //find an 8 or a 6.
+      //check for other 8s and 6s within a one index radius
+      for (let row = 0; row < arr.length; row++) {
+        let currentRow = arr[row]
+        let indexOf6 = findIndexOfHighValues(arr[row], 6)
+        let indexOf8 = findIndexOfHighValues(arr[row], 8)
+        if(indexOf6 >= 0 || indexOf8 >= 0){
+          if(row === 0){
+            console.log(currentRow, indexOf6, indexOf8);
+            console.log(findIndexOfHighValues(arr[row+1], 6, 8));
+          }
+
+        }
+        //for (let column = 0; column < row.length-; column++) {
+        //}
+      }
+    }
+
+    showOnlyKeys(numberTokensArray)
 
     const formatNumbersForDisplay = arr => {
       for (let i = arr.length - 1; i > 0; i--) {
